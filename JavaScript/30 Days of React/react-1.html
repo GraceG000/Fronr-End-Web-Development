@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>30 Days Of React Challenge</title>
+<head></head>
+<body>
+    <!--WE can get started with react in two ways: either with CDN or create-react-app-->
+    <!--Rendering a JSX Element-->
+    <div class="root">
+
+<!--The root div is the gateway to connect all react components to index.html-->
+
+    </div>
+<!--importing React and ReactDOM, using CDN or link...-->  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"  ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+//babel will transpile the react JavScript XML (JSX) to pure JavaScript on the browser...
+
+//styling all the JSX elements...
+const headerStyles = {
+    backgroundColor: '#61dbfb',
+    fontFamily : 'Helvetica Neue',
+    padding: 25,
+    lineHeight: 1.5,
+}
+
+const mainStyles = {
+    backgroundColor: '#f3f0f5',
+}
+
+const footerStyles = {
+    backgroundColor: '#61dbfb',
+}
+
+//getting the root element from the HTML document...
+    const rootElement = document.querySelector('.root')
+
+//JSX element
+   const jsxElement = <h1>I am a JSX element</h1>
+
+//another JSX element, which renders more...
+//let's apply style to the header JSX Element...
+
+
+const header = (
+<header style = {headerStyles}>
+    <h1>Welcome to 30 days of react...</h1>
+    <h2>Getting Started with React</h2>
+    <small>Naruto Uzumaki, </small>
+    <small>February 6, 2023</small>
+    </header>
+)  
+
+/*
+Another way to add style to a JSX element...
+
+ const header = (
+<header style = {{border: '2px solid orange', color: 'black', fontSize: '18px'}}>
+    <h1>Welcome to 30 days of react...</h1>
+    <h2>Getting Started with React</h2>
+    <small>Naruto Uzumaki, </small>
+    <small>February 6, 2023</small>
+    </header>
+)   
+*/
+//another JSX element...
+const main = (
+    <main style={mainStyles}>
+        <p>Prerequisites to get started react.js: </p>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        </main>
+)
+
+//another JSX element...
+
+const footer = (
+    <footer style={footerStyles}>
+        <p>Copyright 2023</p>    
+    </footer>
+)
+//we render the JSX element using the ReactDOM package
+//ReactDOM has the render method and the render method takes two arguments...
+//we can render  only one JSX element at a time...
+//ReactDOM.render(jsxElement, rootElement)   
+//ReactDOM.render(header,rootElement)
+
+
+/*How do we render more than one JSX element?...
+The best way to render all of the three JSX elements is by wrapping them all in a parent JSX element or putting them in an array...
+observe...*/
+//JSX element, app, a container or a parent...
+
+const app = (
+    <div>
+    {header} 
+    {main}
+    {footer}
+    </div>
+)
+
+ReactDOM.render(app, rootElement)
+
+//or you can use...
+//ReactDOM.render([header, main, footer], rootElement)
+</script>
+
+</body>    
+</html>

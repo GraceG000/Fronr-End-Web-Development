@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Practice</title>
+<!--JavaScript functions can be placed in the head tag and called in the body tag...-->
+<script>
+     function myFunction(){
+       document.getElementById("paragraph").innerHTML="Paragraph Changed!";
+     }
+</script>     
+    </head>
+<body>
+    <h2>What can JavaScript Do?</h2>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+
+ <!--Changing the html text with javascript...-->   
+    <button type ="button" onclick='document.getElementById("demo").innerHTML ="Hello JavaScript!"'>Click Me!</button>
+
+<!--Changing the font-size of a text using javascript...-->
+    <p id="food">I eat cheese, only on pizza!</p>
+    <button type = "button" onclick='document.getElementById("food").style.fontSize ="35px"'>Click here, to change my size!</button>
+
+<!--Hiding HTML elemens with JavaScript...-->
+    <p id="hide">JavaScript can hide HTML elements!</p>
+    <button type="button" onclick='document.getElementById("hide").style.display="none"'>Click me to make me disappear!</button>
+
+<!--Showing html elements with JavaScript...-->
+    <p>JavaScript can also show elements!</p>
+    <button type="button" onclick='document.getElementById("hide").style.display="block"'>Click me to make me appear</button>
+
+<!--Calling the javascript function in the body tag...-->
+     <p id ="paragraph">A paragraph!</p>
+     <button type="button" onclick="myFunction()">Click me, and I will change!</button>
+
+     <p id ="addition"></p>
+
+     <!--to print the entire webpage...-->
+     <button onclick="window.print()"> Print this page</button>
+
+     <script>
+        document.getElementById("addition").innerHTML=5+6;
+        
+        //displaying an alert on the browser window...
+        window.alert("I'm learning JavaScript!");
+
+     </script>
+</body>
+</html>

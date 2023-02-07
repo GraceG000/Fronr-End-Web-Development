@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>JavaScript Practice Two</title>
+    </head>
+    <body>
+<!--JavaScript lesson on Statements...-->
+<h2>JavaScript Statements</h2>
+
+<p>A <b>JavaScript program</b>is a list of statements to be executed by a computer</p>
+<p>JavaScript code blocks are written between { and }</p>
+<p id="demo"></p>
+        
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<p>Create a variable, assign a value to it, and display it:</p>
+
+<p id="car"></p>
+
+        <script>
+//defining and initializing variables...
+let x, y, z;
+x=5;
+y=6;
+z=x+y;
+
+//declaring a variable...
+let carName = "Volvo";
+
+//Storing the value in a dom method and displaying it in the body if the page...
+document.getElementById("car").innerHTML = carName;
+
+
+//this is a single-line comment...
+/*this is a multi-line comment...*/
+
+document.getElementById("demo").innerHTML = "The value of z is " + z + ".";
+
+function myFunction(){
+document.getElementById("demo1").innerHTML="I'm neutral to Burger King's Burgers.";      
+document.getElementById("demo2").innerHTML="I'm also neutral towards Pizza Inn's pizzas";       
+
+//creating a const array...
+const cars = ["Mercedes", "Volvo", "Saab"];
+
+//You can change an element in the const array...
+cars[2] = "Honda";
+
+//adding an element to the array...
+cars.push("Audi");
+
+
+
+}       
+</script>
+<!--
+var : declares a variable...variables defined with var can be redeclared...
+let : declares a block variable...variables defined with let cannot be redeclared...
+const : declares a block constant...has block scope...cannot be reassigned...cannot be redeclared...use when you declare a new array, a new object, a new function and a new RegExp...
+if : Marks a block of statements to be executed on a condition
+switch : marks a block of statements to be executed in different cases
+for : marks a block of statements to be executed in a loop
+function : Declares a function
+return : exits a function
+try : implements error handling to a block of statements
+
+if you want a general rule: always declare variables with const
+if  you think the value of the variable can change, use let
+-->
+
+</body>
+</html>
+
