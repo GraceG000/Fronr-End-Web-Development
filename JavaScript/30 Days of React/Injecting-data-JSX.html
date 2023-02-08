@@ -161,6 +161,7 @@ const personAge = (
 
 //defining an array...
 const techs = ['HTML', 'CSS', 'JavaScript']
+const techsFormatted = techs.map((tech)=><li key={tech}>{tech}</li>)
 
 //JSX element, main...
 //injecting an array into a JSX element...
@@ -173,8 +174,10 @@ const main = (
        <em>react.js</em>     
         </strong>:
         </p>
-        <ul>{techs}</ul>
-    </div>    
+        <ul>{techsFormatted}</ul>
+        {result}
+        {personAge}
+        </div>    
     </main>
     )
 
