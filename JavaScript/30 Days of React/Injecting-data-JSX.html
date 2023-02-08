@@ -2,9 +2,90 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+        rel="stylesheet"
+      />
         <title>Injecting Data into a JSX Element</title>
     </head>
+<style>
+    /* ==General Style== */
 
+* {
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+
+html, body{
+    height:100%;
+    line-height:1.5;
+    font-family:'Montserrat';
+    font-weight:300;
+    color:white;
+    background-color: black;
+}
+
+.root{
+    min-height:100%;
+    position:relative;
+}
+
+.header-wrapper,
+.main-wrapper,
+.footer-wrapper{
+    width: 85%;
+    margin:auto;
+}
+
+.header-wrapper,
+.main-wrapper{
+    padding: 10px;
+    margin: 2px auto;
+}
+
+h1{
+    font-size:70px;
+    font-weight:300;
+}
+
+h2,h3 {
+    font-weight:300;
+}
+
+header {
+    background-color:hotpink;
+    padding: 10px;
+}
+
+main{
+    padding:10px 10px 60px;
+}
+
+ul {
+    margin-left:15px;
+}
+
+ul li {
+    list-style: none;
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background:hotpink;
+}
+
+.footer-wrapper{
+    font-weight:400;
+    text-align:center;
+    line-height:60px;
+}
+</style>
     <body>
 
         <div class="root"></div>
@@ -14,6 +95,9 @@
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"  ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/babel">
+
+//Finding html elements using the DOM...
+ const rootElement = document.querySelector('.root')
 
 //Defining various variables...
 const welcome ='Welcome to 30 Days of React'
@@ -58,14 +142,21 @@ const currentYear = new Date().getFullYear()
 const age = currentYear - yearBorn
 //const personAge = <p>{age}</p>
 
-//another JSX element...
-// const personAge = (
-// <p>
-// {' '}
-// {authorfirstName} {authorlastName} is {age} years old   
-// </p>
+//a JSX element of the object type...
+//we can inject string,number,boolean, array data to JSX but we cannot directly inject an object...We should extract object values first or destructure the content of the object before we inject the data to the JSX element... 
+const author = {
+    firstName: "Asabeneh",
+    lastName: "Yetayeh",
+} 
 
-// )
+//dynamically inserting data into a JSX element...
+const personAge = (
+<p>
+{' '}
+{author.firstName} {author.lastName} is {age} years old   
+</p>
+
+)
 
 
 //defining an array...
@@ -87,8 +178,29 @@ const main = (
     </main>
     )
 
+    //declaring a variable in javascript...
+    const copyRight = 'Copyright 2023'
 
-   //we can inject string,number,boolean, array data to JSX but we cannot directly inject an object...We should extract object values first or destructure the content of the object before we inject the data to the JSX element... 
+    //JSX element, footer...
+    const footer = (
+        <footer>
+        <div className = 'footer-wrapper'>
+        <p>{copyRight}</p>    
+        </div>
+        </footer>
+    )
+
+    //JSX element, app...injecting data into it...
+    const app = (
+        <div className='app'>
+        {header}
+        {main} 
+        {footer}   
+        </div>
+    )
+
+   //rendering the JSX elements, using the reactDOM package...this will ensure that it will be displayed on the browser... 
+        ReactDOM.render(app, rootElement)
         </script>
     </body>
 </html>
