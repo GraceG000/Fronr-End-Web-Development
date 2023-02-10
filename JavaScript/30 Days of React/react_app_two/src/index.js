@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./App.js";
+import App from "./App.js";//importing a function...
 
 const rootElement = document.getElementById('root')
 const title = 'SUBSCRIBE'
 const instruction = 'Sign up with your email address to receive news and updates.'
 const copyRight = 'Copyright 2023'
 
+//calling the app function...
 const signUp = App()
 
 
@@ -19,6 +20,7 @@ const header =(
   </header>
 )
 
+//Injecting the form function into the jsx Element 
 const main =(
   <main className="main-wrapper">
     <div className="container">
